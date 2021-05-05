@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E4FFA8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.PlanteListePane">
+  <children>
+    <Button fx:id="ajouterPlante" layoutX="279.0" layoutY="132.0" mnemonicParsing="false" onAction="#ajouterUnePlante" prefHeight="48.0" prefWidth="47.0" stylesheets="@rondBtn.css" text="+">
+      <font>
+        <Font size="19.0" />
+      </font>
+    </Button>
+    <Label layoutX="279.0" layoutY="43.0" prefHeight="50.0" prefWidth="250.0" text="Liste des plantes" textAlignment="CENTER">
+      <font>
+        <Font name="Berlin Sans FB Demi Bold" size="33.0" />
+      </font>
+    </Label>
+    <Label layoutX="338.0" layoutY="142.0" prefHeight="20.0" prefWidth="148.0" text="ajoutez une plante">
+      <font>
+        <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+      </font>
+    </Label>
+    <ScrollPane layoutY="240.0" prefHeight="370.0" prefWidth="800.0">
+      <content>
+        <AnchorPane fx:id="listePane" minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="798.0" style="-fx-background-color: #5DA38B;" />
+      </content>
+      <rotationAxis>
+        <Point3D />
+      </rotationAxis>
+    </ScrollPane>
+    <Button fx:id="returnindex" mnemonicParsing="false" onAction="#returnindex" prefHeight="39.0" prefWidth="105.0" stylesheets="@buttonNormal.css" text="return">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+  </children>
+</Pane>

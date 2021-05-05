@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="maiui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1049.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.Controller">
+  <children>
+    <MenuBar id="caozuo" layoutX="0.0" layoutY="1.0" minHeight="23.0" prefHeight="25.0" prefWidth="1049.0" useSystemMenuBar="false">
+      <menus>
+        <Menu mnemonicParsing="false" text="操作" fx:id="caozuo">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="退出" fx:id="exit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <TabPane layoutX="0.0" layoutY="26.0" prefHeight="718.0" prefWidth="1049.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="plantlog">
+          <content>
+            <AnchorPane id="plantlogContent" minHeight="0.0" minWidth="0.0" prefHeight="451.0" prefWidth="600.0">
+              <children>
+                <GridPane alignment="CENTER" hgap="10.0" layoutX="26.0" layoutY="19.0" prefHeight="650.0" prefWidth="998.0" vgap="10.0">
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                      <Label prefWidth="610.0" text="plantlog">
+                        <font>
+                          <Font size="24.0" />
+                        </font>
+                      </Label>
+                      <Button onAction="#plantlogsearch" prefHeight="31.0" prefWidth="80.0" text="查询" />
+                      <Button onAction="#plantlogmodify" prefHeight="31.0" prefWidth="80.0" text="修改" />
+                      <Button onAction="#plantlogdelete" prefHeight="31.0" prefWidth="80.0" text="删除" />
+                      <Button onAction="#plantlogadd" prefHeight="31.0" prefWidth="80.0" text="新增" />
+                      <Button onAction="#plantlogrefresh" prefHeight="31.0" prefWidth="80.0" text="重置" />
+                    </children>
+                  </HBox>
+                  <!--   以下为增删改查相关-->
+                  <HBox alignment="BOTTOM_RIGHT" minHeight="-Infinity" minWidth="-1.0" prefHeight="40.0" prefWidth="824.0" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <TextField id="plantlogid" fx:id="plantlogid" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="id" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantlognom" fx:id="plantlognom" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="nom" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantlogsuividate" fx:id="plantlogsuividate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="suividate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantloghauteur" fx:id="plantloghauteur" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="hauteur" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantlogph" fx:id="plantlogph" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="ph" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantlognote" fx:id="plantlognote" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="note" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantlogphoto" fx:id="plantlogphoto" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="photo" HBox.hgrow="ALWAYS" />
+                  </HBox>
+                  <TableView fx:id="plantlogtableView" editable="false" prefHeight="566.0" prefWidth="938.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <columns>
+                      <TableColumn editable="false" prefWidth="100.0" text="id" fx:id="plantlogidcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="nom" fx:id="plantlognomcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="suividate" fx:id="plantlogsuividatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="hauteur" fx:id="plantloghauteurcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="ph" fx:id="plantlogphcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="note" fx:id="plantlognotecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="photo" fx:id="plantlogphotocolumn">
+                      </TableColumn>
+					  <TableColumn editable="true" prefWidth="100.0" text="选择" fx:id="plantlogcolumn">
+                      </TableColumn>
+                    </columns>
+                    <items>
+                      <FXCollections fx:factory="observableArrayList" />
+                    </items>
+                  </TableView>
+                </GridPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="plant">
+          <content>
+            <AnchorPane id="plantContent" minHeight="0.0" minWidth="0.0" prefHeight="451.0" prefWidth="600.0">
+              <children>
+                <GridPane alignment="CENTER" hgap="10.0" layoutX="26.0" layoutY="19.0" prefHeight="650.0" prefWidth="998.0" vgap="10.0">
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                      <Label prefWidth="610.0" text="plant">
+                        <font>
+                          <Font size="24.0" />
+                        </font>
+                      </Label>
+                      <Button onAction="#plantsearch" prefHeight="31.0" prefWidth="80.0" text="查询" />
+                      <Button onAction="#plantmodify" prefHeight="31.0" prefWidth="80.0" text="修改" />
+                      <Button onAction="#plantdelete" prefHeight="31.0" prefWidth="80.0" text="删除" />
+                      <Button onAction="#plantadd" prefHeight="31.0" prefWidth="80.0" text="新增" />
+                      <Button onAction="#plantrefresh" prefHeight="31.0" prefWidth="80.0" text="重置" />
+                    </children>
+                  </HBox>
+                  <!--   以下为增删改查相关-->
+                  <HBox alignment="BOTTOM_RIGHT" minHeight="-Infinity" minWidth="-1.0" prefHeight="40.0" prefWidth="824.0" spacing="10.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <TextField id="plantnom" fx:id="plantnom" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="nom" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantphoto" fx:id="plantphoto" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="photo" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantplantationdate" fx:id="plantplantationdate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="plantationdate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantrempotagedate" fx:id="plantrempotagedate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="rempotagedate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantarronsagedate" fx:id="plantarronsagedate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="arronsagedate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantentretiendate" fx:id="plantentretiendate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="entretiendate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantcoupedate" fx:id="plantcoupedate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="coupedate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantrecottedate" fx:id="plantrecottedate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="recottedate" HBox.hgrow="ALWAYS" />
+                    <TextField id="planthauteur" fx:id="planthauteur" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="hauteur" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantph" fx:id="plantph" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="ph" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantmesuresdate" fx:id="plantmesuresdate" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="mesuresdate" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantnotes" fx:id="plantnotes" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="notes" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantinterval1" fx:id="plantinterval1" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="interval1" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantinterval2" fx:id="plantinterval2" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="interval2" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantinterval3" fx:id="plantinterval3" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="interval3" HBox.hgrow="ALWAYS" />
+                    <TextField id="plantinterval4" fx:id="plantinterval4" minWidth="-1.0" prefHeight="40.0" prefWidth="231.0" promptText="interval4" HBox.hgrow="ALWAYS" />
+                  </HBox>
+                  <TableView fx:id="planttableView" editable="false" prefHeight="566.0" prefWidth="938.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <columns>
+                      <TableColumn editable="false" prefWidth="100.0" text="nom" fx:id="plantnomcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="photo" fx:id="plantphotocolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="plantationdate" fx:id="plantplantationdatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="rempotagedate" fx:id="plantrempotagedatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="arronsagedate" fx:id="plantarronsagedatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="entretiendate" fx:id="plantentretiendatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="coupedate" fx:id="plantcoupedatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="recottedate" fx:id="plantrecottedatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="hauteur" fx:id="planthauteurcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="ph" fx:id="plantphcolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="mesuresdate" fx:id="plantmesuresdatecolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="notes" fx:id="plantnotescolumn">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="interval1" fx:id="plantinterval1column">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="interval2" fx:id="plantinterval2column">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="interval3" fx:id="plantinterval3column">
+                      </TableColumn>
+                      <TableColumn editable="false" prefWidth="100.0" text="interval4" fx:id="plantinterval4column">
+                      </TableColumn>
+					  <TableColumn editable="true" prefWidth="100.0" text="选择" fx:id="plantcolumn">
+                      </TableColumn>
+                    </columns>
+                    <items>
+                      <FXCollections fx:factory="observableArrayList" />
+                    </items>
+                  </TableView>
+                </GridPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
