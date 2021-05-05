@@ -85,7 +85,7 @@ public class ModifierPlante implements Initializable {
             Stage stage = CalendarApp.primary;
 //        Stage stage =new Stage();
 
-            stage.setTitle("Agenda Etudiant Jardinage - ajouter une plante");
+            stage.setTitle("Agenda Etudiant Jardinage - liste de plante");
             stage.setScene(new Scene(root1));
             stage.setResizable(false);
             stage.show();
@@ -175,7 +175,7 @@ public class ModifierPlante implements Initializable {
                 dos.flush();
                 fis.close();
                 fos.close();
-                System.out.println("文件保存完成!");
+
                 String s ="file:src/ImagePlante/"+nom+".jpg";
 //                Image image = new Image("file:"+this.file.getPath());
                 Image image = new Image(s);
@@ -203,7 +203,7 @@ public class ModifierPlante implements Initializable {
         //set what you want on your stage
 
 
-        stage.setTitle("Agenda Etudiant Jardinage - ajouter une plante");
+        stage.setTitle("Agenda Etudiant Jardinage - liste de plante");
         stage.setScene(new Scene(root1));
         stage.setResizable(false);
         stage.show();

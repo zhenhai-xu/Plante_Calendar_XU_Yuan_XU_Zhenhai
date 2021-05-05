@@ -119,7 +119,7 @@ public class AjoutePlanteListe implements Initializable {
 //        Stage stage =new Stage();
             //set what you want on your stage
 
-            stage.setTitle("Agenda Etudiant Jardinage - details de plante");
+            stage.setTitle("Agenda Etudiant Jardinage - modifier de plante");
             stage.setScene(new Scene(root1));
             stage.setResizable(false);
             stage.show();

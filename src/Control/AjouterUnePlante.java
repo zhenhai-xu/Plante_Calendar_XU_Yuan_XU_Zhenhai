@@ -37,6 +37,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.Main;
 
+/**Interface d'ajouter une plante*/
 public class AjouterUnePlante implements Initializable {
 
     @FXML
@@ -85,7 +86,6 @@ public class AjouterUnePlante implements Initializable {
 	Dao<Plantlog> plantlogdao = new Dao(new Plantlog());
 
     @FXML
-    //在添加植物中添加照片
     void choisirPhoto(ActionEvent event) {
         FileChooser fileChooser1 = new FileChooser();
         Stage cPhoto = new Stage();
@@ -106,7 +106,6 @@ public class AjouterUnePlante implements Initializable {
     }
 
     @FXML
-    //添加植物的窗口里的返回键的事件
     void retourBut(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/main.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -119,7 +118,6 @@ public class AjouterUnePlante implements Initializable {
     }
 
     @FXML
-        //添加植物到窗口里，添加键的事件
     void AjouterBut(ActionEvent event) throws IOException {
         String nom = nomDePlante.getText();
 
@@ -202,7 +200,6 @@ public class AjouterUnePlante implements Initializable {
                 dos.flush();
                 fis.close();
                 fos.close();
-                System.out.println("文件保存完成!");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -219,7 +216,6 @@ public class AjouterUnePlante implements Initializable {
 
         }
         Main.listeDetail.put(plante.getNom(),plante);
-
 
         plante.addHauteur(Double.valueOf(hauteur.getText()));
         plante.addPh(Double.valueOf(PH.getText()));
@@ -253,7 +249,7 @@ public class AjouterUnePlante implements Initializable {
 				+"'"+UUID.randomUUID().toString().replace("-", "")+"',"+"'"+nom+"',"+
 				"'"+new SimpleDateFormat("yyyy-MM-dd").format(new Date())+"',"+
 				"'"+hauteur.getText()+"',"+"'"+PH.getText()+"',"+"'"+note+"'"+",'"+nom+"')");
-        System.out.println("添加成功");
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/main.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = CalendarApp.primary;

@@ -126,7 +126,7 @@ public class PlanteListePane implements Initializable {
 //        Stage stage =new Stage();
             //set what you want on your stage
 
-            stage.setTitle("Agenda Etudiant Jardinage - details de plante");
+            stage.setTitle("Agenda Etudiant Jardinage - modifier la plante");
             stage.setScene(new Scene(root1));
             stage.setResizable(false);
             stage.show();
@@ -158,7 +158,7 @@ public class PlanteListePane implements Initializable {
                 //set what you want on your stage
 
 
-                stage.setTitle("Agenda Etudiant Jardinage - ajouter une plante");
+                stage.setTitle("Agenda Etudiant Jardinage - liste de plante");
                 stage.setScene(new Scene(root1));
                 stage.setResizable(false);
                 stage.show();
@@ -186,7 +186,7 @@ public class PlanteListePane implements Initializable {
         imageView.setLayoutX(15);
         imageView.setLayoutY(10);
         if(planteDetail.getNom()!=null) {
-            imageView.setImage(new Image("file:ImagePlante\\"+planteDetail.getNom()+".jpg"));
+            imageView.setImage(new Image("file:ImagePlante/"+planteDetail.getNom()+".jpg"));
             System.out.println("图片设置成功");
             imageView.setFitWidth(130);
             imageView.setFitHeight(150);
@@ -194,7 +194,7 @@ public class PlanteListePane implements Initializable {
             imageView.setPreserveRatio(false);
 
         }else {
-            File file = new File("src\\ImagePlante\\noPhoto.jpg");
+            File file = new File("src/ImagePlante/noPhoto.jpg");
             String string = file.toURI().toString();
             Image image = new Image(string);
             imageView.setImage(image);
@@ -252,6 +252,5 @@ public class PlanteListePane implements Initializable {
         	afficherUnePlante(plantlist.get(i));
 		}
         System.out.println("\n----------------------");
-
     }
 }

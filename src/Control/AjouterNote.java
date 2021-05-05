@@ -82,7 +82,7 @@ public class AjouterNote {
 //        Stage stage =new Stage();
 //        //set what you want on your stage
 //        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Agenda Etudiant Jardinage - ajouter des mesures");
+        stage.setTitle("Agenda Etudiant Jardinage - liste de plante");
         stage.setScene(new Scene(root1));
         stage.setResizable(false);
         stage.show();
@@ -123,7 +123,6 @@ public class AjouterNote {
                 dos.flush();
                 fis.close();
                 fos.close();
-                System.out.println("文件保存完成!");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -139,10 +138,9 @@ public class AjouterNote {
                 e.printStackTrace();
             }
         }else {
-            File file = new File("ImagePlante\\noPhoto.jpg");
+            File file = new File("ImagePlante/noPhoto.jpg");
             String string = file.toURI().toString();
             Image image = new Image(string);
-            System.out.println("图片设置成功");
            // planteDetail.addImagesList(image);
         }
         plantlogdao.executeSql("INSERT INTO plantlog(id,nom,suividate,hauteur,ph,note,photo) values ("
@@ -159,7 +157,7 @@ public class AjouterNote {
 //        Stage stage =new Stage();
         //set what you want on your stage
 //        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Agenda Etudiant Jardinage - ajouter des mesures");
+        stage.setTitle("Agenda Etudiant Jardinage - detail de plante");
         stage.setScene(new Scene(root1));
         stage.setResizable(false);
         stage.show();
