@@ -3,5 +3,5 @@ Vous pouvez modifier les paramètres de saisie de la base de données dans DBUni
 L'entrée principale du programme se trouve dans Plante_Calendar_XU_Yuan_XU_Zhenhai/src/application/CalendarApp.java
 
 
-通过数据库存储信息，不方便分享。待完善。
+通过数据库存储信息，不方便分享。待完善。(JavaFX)
 Information is stored through the database, which is inconvenient to share.
